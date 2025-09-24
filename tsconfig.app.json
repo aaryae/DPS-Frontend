@@ -21,7 +21,25 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Aliases */
+    "baseUrl": "./src",
+    "paths": {
+      "@ui/*": ["ui/*"],
+      "@ui-admin/*": ["ui/admin/*"],
+      "@ui-common/*": ["ui/common/*"],
+      "@ui-landing/*": ["ui/Landing/*"],
+      "@ui-user/*": ["ui/user/*"],
+      "@hooks/*": ["hooks/*"],
+      "@services/*": ["service/*"],
+      "@types/*": ["types/*"],
+      "@shared/*": ["shared/*"],
+      "@assets/*": ["assets/*"],
+      "@context/*": ["context/*"],
+      "@data/*": ["data/*"],
+      "@functions/*": ["function/*"]
+    }
   },
   "include": ["src"]
 }

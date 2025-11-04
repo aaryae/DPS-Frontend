@@ -1,15 +1,30 @@
-import Header from '@ui/landing/organisms/Header'
-import Sidebar from '@ui/landing/organisms/Sidebar'
-import { useState } from 'react'
-import './App.css'
+import Template from '@ui/landing/templates/Template';
+import Dashboard from '@ui/user/pages/Dashboard';
+import KYC from '@ui/user/pages/KYC';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './App.css';
 
 function App() {
-    const [sidebarOpen, setSidebarOpen] = useState(false)
+
+
+    const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Template />,
+    children: [
+      { index: true, element: <Dashboard /> },
+      { path: '/kyc', element: <KYC /> },
+    ]
+  },
+  
+]);
 
   return (
     <>
-    <Header onMenuToggle={() => setSidebarOpen(!sidebarOpen)} />
-      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(true)} />
+
+          <RouterProvider router={router} />
+
+   
     </>
   )
 }

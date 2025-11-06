@@ -1,30 +1,24 @@
-import Template from '@ui/landing/templates/Template';
-import Dashboard from '@ui/user/pages/Dashboard';
-import KYC from '@ui/user/pages/KYC';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './App.css';
+import Dashboard from '@ui/user/pages/Dashboard'
+import KYC from '@ui/user/pages/KYC'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import './App.css'
+import Template from '@ui/user/templates/Template'
 
 function App() {
-
-
-    const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Template />,
-    children: [
-      { index: true, element: <Dashboard /> },
-      { path: '/kyc', element: <KYC /> },
-    ]
-  },
-  
-]);
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Template />,
+      children: [
+        { index: true, element: <Dashboard /> },
+        { path: '/kyc', element: <KYC /> },
+      ],
+    },
+  ])
 
   return (
     <>
-
-          <RouterProvider router={router} />
-
-   
+      <RouterProvider router={router} />
     </>
   )
 }

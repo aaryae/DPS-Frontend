@@ -1,11 +1,13 @@
-import StatsDetail from "../molecules/StatsDetail"
-import HeroCard from "../organisms/BalanceSection"
+import HeroCard from '../organisms/BalanceSection'
+import RecentActivities from '../organisms/RecentActivities'
+import StatsDetail from '../organisms/StatsDetail'
 
 const Dashboard = () => {
   return (
     <div>
-      <HeroCard/>
-      <StatsDetail/>
+      <HeroCard />
+      <StatsDetail />
+      <RecentActivities/>
     </div>
   )
 }

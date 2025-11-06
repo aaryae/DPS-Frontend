@@ -1,8 +1,9 @@
+import HeroCard from "../molecules/HeroCard"
 
 const Dashboard = () => {
   return (
     <div>
-      this is Dashboard
+      <HeroCard/>
     </div>
   )
 }

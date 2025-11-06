@@ -10,17 +10,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTime } from "@hooks/useTime";
 import { useState } from "react";
 
-const HeroCard = () => {
+const BalanceSection = () => {
   const { time, greeting } = useTime();
   const [showBalance, setShowBalance] = useState(true);
-  const [currentView, setCurrentView] = useState("dashboard");
 
   return (
     <div className="space-y-8">
-      {/* Hero Balance Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-blue-950 rounded-3xl"></div>
-        <div className="absolute inset-0 bg-black/10 rounded-3xl"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-48 translate-x-48"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/10 rounded-full translate-y-36 -translate-x-36"></div>
 
@@ -28,14 +25,9 @@ const HeroCard = () => {
           <div className="flex justify-between items-start mb-8">
             <div>
               <p className="text-white/80 text-sm font-medium mb-2">
-                Good{" "}
-                {time.getHours() < 12
-                  ? "Morning"
-                  : time.getHours() < 18
-                  ? "Afternoon"
-                  : "Evening"}
+                Good {greeting}
               </p>
-              <h2 className="text-3xl font-bold mb-1">Welcome back, Aaryae! 👋</h2>
+              <h2 className="text-3xl font-bold mb-1">Welcome back, Aaryae! </h2>
               <p className="text-white/90 text-sm">
                 {time.toLocaleDateString("en-US", {
                   weekday: "long",
@@ -79,7 +71,7 @@ const HeroCard = () => {
 
               <div className="flex gap-4">
                 <button
-                  onClick={() => setCurrentView("transfer")}
+                  
                   className="bg-white text-indigo-600 px-6 py-3 rounded-2xl font-semibold flex items-center gap-2 hover:bg-white/90 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                 >
                   <FontAwesomeIcon icon={faArrowTrendUp} size="sm" />
@@ -134,4 +126,4 @@ const HeroCard = () => {
   );
 };
 
-export default HeroCard;
+export default BalanceSection;

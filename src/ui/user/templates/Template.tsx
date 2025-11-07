@@ -7,13 +7,14 @@ const Template = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div className='flex min-h-screen'>
+    <div className='flex min-h-screen bg-gray-50'>
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-      <div className='flex-1 flex flex-col'>
+      {/* ADD lg:ml-64 here to push content right on desktop */}
+      <div className='flex-1 flex flex-col lg:ml-64'>
         <Header onMenuToggle={() => setSidebarOpen(!sidebarOpen)} />
 
-        <main className='flex-1 p-8 mt-14 md:p-8  lg:p-8'>
+        <main className='flex-1 p-6 mt-14 md:p-8'>
           <Outlet />
         </main>
       </div>

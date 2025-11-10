@@ -1,7 +1,8 @@
-import HeroCard from '../organisms/BalanceSection'
-import RecentActivities from '../organisms/QuickAction'
-import RecentActivity from '../organisms/RecentActivity'
-import StatsDetail from '../organisms/StatsDetail'
+import HeroCard from "@ui-user/organisms/BalanceSection"
+import RecentActivities from '@ui-user/organisms/QuickAction'
+import RecentActivity from '@ui-user/organisms/RecentActivity'
+import StatsDetail from '@ui-user/organisms/StatsDetail'
+
 
 const Dashboard = () => {
   return (

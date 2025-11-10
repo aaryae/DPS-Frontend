@@ -1,6 +1,6 @@
 import { faArrowTrendUp, faMoneyBillWave, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import StatCard from '../molecules/StatCard'
+import StatCard from '@ui-user/molecules/StatCard'
 
 const StatsDetail = () => {
   return (

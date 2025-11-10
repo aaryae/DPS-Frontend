@@ -1,6 +1,6 @@
 import { faArrowDown, faArrowUp, faCreditCard, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import QuickActionCard from '../molecules/QuickActionCard'
+import QuickActionCard from '@ui-user/molecules/QuickActionCard'
 
 const RecentActivities = () => {
   return (

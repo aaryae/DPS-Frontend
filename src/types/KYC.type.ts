@@ -13,3 +13,16 @@ export type FormDataType= {
   idNumber: string;
   panNumber: string;
 }
+
+export type IDoc = {
+  name: string;
+  file: File;
+} | null;
+
+
+export type UploadedDocsType= {
+  idFront: IDoc;
+  idBack: IDoc;
+  selfie: IDoc;
+  addressProof: IDoc;
+}

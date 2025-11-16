@@ -19,27 +19,14 @@ import {
   faEye,
   faMagic,
 } from "@fortawesome/free-solid-svg-icons";
+import type { FormDataType } from "../../../../types/KYC.type";
 
 type IDoc = {
   name: string;
   file: File;
 } | null;
 
-interface FormDataType {
-  fullName: string;
-  email: string;
-  phone: string;
-  dob: string;
-  address: string;
-  city: string;
-  state: string;
-  pincode: string;
-  occupation: string;
-  income: string;
-  idType: "aadhaar" | "passport" | "driving" | "voter";
-  idNumber: string;
-  panNumber: string;
-}
+
 
 interface UploadedDocsType {
   idFront: IDoc;

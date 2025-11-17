@@ -64,7 +64,6 @@ const KYCInterface: React.FC = () => {
   const idFrontRef = useRef<HTMLInputElement | null>(null);
   const idBackRef = useRef<HTMLInputElement | null>(null);
   const selfieRef = useRef<HTMLInputElement | null>(null);
-  const addressRef = useRef<HTMLInputElement | null>(null);
 
   const steps = [
     { id: 0, title: "Personal Details", icon: faUser, desc: "Basic Information" },

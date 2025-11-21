@@ -34,7 +34,7 @@
       "@ui-user/*": ["ui/user/*"],
       "@hooks/*": ["hooks/*"],
       "@services/*": ["service/*"],
-      "@types/*": ["types/*"],
+      "@app-types/*": ["types/*"],
       "@shared/*": ["shared/*"],
       "@assets/*": ["assets/*"],
       "@context/*": ["context/*"],

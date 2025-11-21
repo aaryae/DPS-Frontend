@@ -1,10 +1,10 @@
 import { faBuilding, faCalendarAlt, faEnvelope, faHome, faIdCard, faInfoCircle, faMapMarkerAlt, faPhone, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import type { FormDataType } from '../../../../../types/KYC.type'
+import type { FormDataType } from '../../../../../types/KYCType'
 
 import { useState } from 'react'
 
-const PersonalDetails = () => {
+const PersonalDetailsModel = () => {
 
       const [currentStep, setCurrentStep] = useState<number>(0)
       const [formData, setFormData] = useState<FormDataType>({
@@ -319,4 +319,4 @@ const PersonalDetails = () => {
   )
 }
 
-export default PersonalDetails
+export default PersonalDetailsModel

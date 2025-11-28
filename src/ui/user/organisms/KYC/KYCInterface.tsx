@@ -60,11 +60,7 @@ const KYCInterface: React.FC<KYCInterfaceProps> = ({ onClose }) => {
     addressProof: null,
   })
 
-  // refs for hidden file inputs
-  const idFrontRef = useRef<HTMLInputElement | null>(null)
-  const idBackRef = useRef<HTMLInputElement | null>(null)
-  const selfieRef = useRef<HTMLInputElement | null>(null)
-  const addressProofRef = useRef<HTMLInputElement | null>(null)
+
 
   const steps = [
     { id: 0, title: 'Personal Details', icon: faUser, desc: 'Basic Information' },
@@ -72,18 +68,7 @@ const KYCInterface: React.FC<KYCInterfaceProps> = ({ onClose }) => {
     { id: 2, title: 'Final Review', icon: faShieldAlt, desc: 'Confirm & Submit' },
   ]
 
-  const handleInputChange = <K extends keyof FormDataType>(field: K, value: FormDataType[K]) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
-
-  const handleFileChange = (docType: keyof UploadedDocsType, file?: File) => {
-    if (!file) return
-    setUploadedDocs((prev) => ({ ...prev, [docType]: { name: file.name, file } }))
-  }
-
-  const removeFile = (docType: keyof UploadedDocsType) => {
-    setUploadedDocs((prev) => ({ ...prev, [docType]: null }))
-  }
+ 
 
   const nextStep = () => {
     if (currentStep === 0) {

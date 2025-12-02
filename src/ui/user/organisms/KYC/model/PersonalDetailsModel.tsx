@@ -15,8 +15,8 @@ import type { FormDataType } from '../../../../../types/KYCType'
 import Input from '@ui/user/atoms/Input'
 import { useState } from 'react'
 
-const PersonalDetailsModel = () => {
-  const [currentStep, setCurrentStep] = useState<number>(0)
+const PersonalDetailsModel = ({currentStep}:{currentStep: number}) => {
+  // const [currentStep, setCurrentStep] = useState<number>(0)
   const [formData, setFormData] = useState<FormDataType>({
     fullName: '',
     email: '',

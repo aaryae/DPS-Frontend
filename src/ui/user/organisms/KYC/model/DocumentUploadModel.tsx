@@ -3,8 +3,8 @@ import { faCamera, faCheckCircle, faCloudUploadAlt, faIdCard, faInfoCircle } fro
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRef, useState } from 'react';
 
-const DocumentUploadModel = () => {
-  const [currentStep, setCurrentStep] = useState<number>(0)
+const DocumentUploadModel = ({currentStep}:{currentStep:number}) => {
+  // const [currentStep, setCurrentStep] = useState<number>(0)
   const [formData, setFormData] = useState<FormDataType>({
     fullName: '',
     email: '',

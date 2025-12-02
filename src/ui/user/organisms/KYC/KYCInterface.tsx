@@ -1,5 +1,4 @@
 import {
-  faCamera,
   faCheck,
   faCheckCircle,
   faChevronLeft,
@@ -7,17 +6,15 @@ import {
   faClock,
   faCloudUploadAlt,
   faEye,
-  faIdCard,
-  faInfoCircle,
   faMagic,
   faShieldAlt,
   faUser
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import type { FormDataType } from '../../../../types/KYCType'
-import PersonalDetailsModel from './model/PersonalDetailsModel'
 import DocumentUploadModel from './model/DocumentUploadModel'
+import ReviewInformationModel from './model/ReviewInformationModel'
 
 type IDoc = {
   name: string
@@ -177,13 +174,13 @@ const KYCInterface: React.FC<KYCInterfaceProps> = ({ onClose }) => {
           </div>
         </div>
             {/* first model */}
-       <PersonalDetailsModel/>
+       {/* <PersonalDetailsModel currentStep={0}/> */}
 
         {/* Step 2: Document Upload */}
-        <DocumentUploadModel/>
+        <DocumentUploadModel currentStep={0}/>
 
         {/* Step 3 */}
-        {currentStep === 2 && (
+        {/* {currentStep === 2 && (
           <div className='space-y-8'>
             <div className='text-center'>
               <div className='w-20 h-20 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-3xl flex items-center justify-center mx-auto mb-4'>
@@ -269,7 +266,8 @@ const KYCInterface: React.FC<KYCInterfaceProps> = ({ onClose }) => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
+        <ReviewInformationModel currentStep={0} setCurrentStep={setCurrentStep}/>
 
         {/* Navigation */}
         <div className='flex justify-between items-center bg-white/70 backdrop-blur-xl p-6 rounded-3xl border border-white/20 shadow-xl mt-8'>

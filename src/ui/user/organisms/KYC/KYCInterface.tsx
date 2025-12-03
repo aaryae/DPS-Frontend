@@ -8,13 +8,15 @@ import {
   faEye,
   faMagic,
   faShieldAlt,
-  faUser
+  faUser,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import type { FormDataType } from '../../../../types/KYCType'
 import DocumentUploadModel from './model/DocumentUploadModel'
 import ReviewInformationModel from './model/ReviewInformationModel'
+import PersonalDetailsModel from './model/PersonalDetailsModel'
+import NavigationModel from './model/NavigationModel'
 
 type IDoc = {
   name: string
@@ -42,10 +44,10 @@ const KYCInterface: React.FC<KYCInterfaceProps> = ({ onClose }) => {
     address: '',
     city: '',
     state: '',
-    pincode: '',
+    pinCode: '',
     occupation: '',
     income: '',
-    idType: 'aadhaar',
+    idType: 'citizenship',
     idNumber: '',
     panNumber: '',
   })
@@ -57,15 +59,11 @@ const KYCInterface: React.FC<KYCInterfaceProps> = ({ onClose }) => {
     addressProof: null,
   })
 
-
-
   const steps = [
     { id: 0, title: 'Personal Details', icon: faUser, desc: 'Basic Information' },
     { id: 1, title: 'Document Upload', icon: faCloudUploadAlt, desc: 'Identity Verification' },
     { id: 2, title: 'Final Review', icon: faShieldAlt, desc: 'Confirm & Submit' },
   ]
-
- 
 
   const nextStep = () => {
     if (currentStep === 0) {
@@ -173,11 +171,21 @@ const KYCInterface: React.FC<KYCInterfaceProps> = ({ onClose }) => {
             ))}
           </div>
         </div>
-            {/* first model */}
-       {/* <PersonalDetailsModel currentStep={0}/> */}
+        {/* first model */}
+        <PersonalDetailsModel
+          currentStep={0}
+          setCurrentStep={setCurrentStep}
+          formData={formData}
+          setFormData={setFormData}
+        />
 
         {/* Step 2: Document Upload */}
-        <DocumentUploadModel currentStep={0}/>
+        <DocumentUploadModel
+          currentStep={0}
+          setCurrentStep={setCurrentStep}
+          formData={formData}
+          setFormData={setFormData}
+        />
 
         {/* Step 3 */}
         {/* {currentStep === 2 && (
@@ -267,53 +275,15 @@ const KYCInterface: React.FC<KYCInterfaceProps> = ({ onClose }) => {
             </div>
           </div>
         )} */}
-        <ReviewInformationModel currentStep={0} setCurrentStep={setCurrentStep}/>
+        <ReviewInformationModel currentStep={0} setCurrentStep={setCurrentStep} />
 
         {/* Navigation */}
-        <div className='flex justify-between items-center bg-white/70 backdrop-blur-xl p-6 rounded-3xl border border-white/20 shadow-xl mt-8'>
-          <button
-            type='button'
-            onClick={prevStep}
-            disabled={currentStep === 0}
-            className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
-              currentStep === 0
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:shadow-lg'
-            }`}
-          >
-            <FontAwesomeIcon icon={faChevronLeft} />
-            {/* Previous */}
-            forward
-          </button>
-
-          <div className='text-center'>
-            <p className='text-gray-600 text-sm'>
-              Step {currentStep + 1} of {steps.length}
-            </p>
-            <p className='text-xs text-gray-400'>Make sure all information is correct</p>
-          </div>
-
-          <div className='flex items-center gap-3'>
-            {currentStep < steps.length - 1 ? (
-              <button
-                type='button'
-                onClick={nextStep}
-                className='flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold bg-indigo-600 text-white hover:shadow-lg transition-all duration-200'
-              >
-                Next
-                <FontAwesomeIcon icon={faChevronRight} />
-              </button>
-            ) : (
-              <button
-                type='submit'
-                className='flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold bg-emerald-600 text-white hover:shadow-lg transition-all duration-200'
-              >
-                <FontAwesomeIcon icon={faCheck} />
-                Submit
-              </button>
-            )}
-          </div>
-        </div>
+        <NavigationModel
+          currentStep={0}
+          setCurrentStep={setCurrentStep}
+          formData={formData}
+          setFormData={setFormData}
+        />
       </div>
     </form>
   )

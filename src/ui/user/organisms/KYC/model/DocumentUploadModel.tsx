@@ -1,9 +1,9 @@
-import type { FormDataType, UploadedDocsType } from '@app-types/KYCType';
+import type { FormDataType, KYCSteps, UploadedDocsType } from '@app-types/KYCType';
 import { faCamera, faCheckCircle, faCloudUploadAlt, faIdCard, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRef, useState } from 'react';
 
-const DocumentUploadModel = ({currentStep}:{currentStep:number}) => {
+const DocumentUploadModel = ({currentStep}:KYCSteps) => {
   // const [currentStep, setCurrentStep] = useState<number>(0)
   const [formData, setFormData] = useState<FormDataType>({
     fullName: '',
@@ -13,10 +13,10 @@ const DocumentUploadModel = ({currentStep}:{currentStep:number}) => {
     address: '',
     city: '',
     state: '',
-    pincode: '',
+    pinCode: '',
     occupation: '',
     income: '',
-    idType: 'aadhaar',
+    idType: 'citizenship',
     idNumber: '',
     panNumber: '',
   })

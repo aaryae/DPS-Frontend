@@ -1,3 +1,4 @@
+import type { FormDataType, KYCSteps } from '@app-types/KYCType'
 import {
   faBuilding,
   faCalendarAlt,
@@ -10,12 +11,12 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import type { FormDataType } from '../../../../../types/KYCType'
+
 
 import Input from '@ui/user/atoms/Input'
 import { useState } from 'react'
 
-const PersonalDetailsModel = ({currentStep}:{currentStep: number}) => {
+const PersonalDetailsModel = ({currentStep}:KYCSteps) => {
   // const [currentStep, setCurrentStep] = useState<number>(0)
   const [formData, setFormData] = useState<FormDataType>({
     fullName: '',
@@ -25,10 +26,10 @@ const PersonalDetailsModel = ({currentStep}:{currentStep: number}) => {
     address: '',
     city: '',
     state: '',
-    pincode: '',
+    pinCode: '',
     occupation: '',
     income: '',
-    idType: 'aadhaar',
+    idType: 'citizenship',
     idNumber: '',
     panNumber: '',
   })
@@ -177,8 +178,8 @@ const PersonalDetailsModel = ({currentStep}:{currentStep: number}) => {
                     icon={faUser}
                     required={true}
                     placeholder='PinCode'
-                    value={formData.pincode}
-                    onChange={(e) => handleInputChange('pincode', e.target.value)}
+                    value={formData.pinCode}
+                    onChange={(e) => handleInputChange('pinCode', e.target.value)}
                     name='PinCode'
                     error=''
                   />

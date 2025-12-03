@@ -1,3 +1,5 @@
+import type { SetStateAction } from "react";
+
 export type FormDataType= {
   fullName: string;
   email: string;
@@ -6,10 +8,10 @@ export type FormDataType= {
   address: string;
   city: string;
   state: string;
-  pincode: string;
+  pinCode: string;
   occupation: string;
   income: string;
-  idType: "aadhaar" | "passport" | "driving" | "voter";
+  idType: "citizenship" | "passport" | "driving" | "voter";
   idNumber: string;
   panNumber: string;
 }
@@ -26,3 +28,12 @@ export type UploadedDocsType= {
   selfie: IDoc;
   addressProof: IDoc;
 }
+
+export type KYCSteps  =  {
+  currentStep: number;
+  setCurrentStep:React.Dispatch<SetStateAction<number>>;
+} & {
+formData:FormDataType;
+  setFormData: React.Dispatch<SetStateAction<FormDataType>>;
+}
+  

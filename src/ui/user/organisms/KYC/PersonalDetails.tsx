@@ -5,7 +5,7 @@ import KycModel from './KYCModel'
 
 const PersonalDetails = () => {
   const [status, setStatus] = useState<string>('In Process')
-  const [KYCModel, setKYCModel] = useState<boolean>(false);
+  const [KYCModel, setKYCModel] = useState<boolean>(false)
 
   return (
     <>
@@ -21,24 +21,24 @@ const PersonalDetails = () => {
 
       {/* Modal Overlay */}
       {KYCModel && (
-        <div 
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
+        <div
+          className='fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn'
           onClick={() => setKYCModel(false)}
         >
-          <div 
-            className="relative w-full max-w-7xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl animate-slideUp"
+          <div
+            className='relative w-full max-w-7xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl animate-slideUp'
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setKYCModel(false)}
-              className="sticky top-4 right-4 float-right z-10 w-10 h-10 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110"
+              className='sticky top-4 right-4 float-right z-10 w-10 h-10 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110'
             >
               ✕
             </button>
-            
+
             {/* KYC Interface */}
-            <KycModel onClose={() => setKYCModel(false)}/>
+            <KycModel onClose={() => setKYCModel(false)} />
           </div>
         </div>
       )}

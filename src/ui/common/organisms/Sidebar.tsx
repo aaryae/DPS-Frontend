@@ -1,17 +1,12 @@
-import { navItems } from '@data/navItems.data';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { NavLink } from 'react-router-dom';
+import { navItems } from '@data/navItems.data'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { NavLink } from 'react-router-dom'
 
 const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   return (
-     <>
+    <>
       {/* Mobile overlay */}
-      {isOpen && (
-        <div 
-          className='fixed inset-0 bg-black/50 z-40 lg:hidden' 
-          onClick={onClose}
-        />
-      )}
+      {isOpen && <div className='fixed inset-0 bg-black/50 z-40 lg:hidden' onClick={onClose} />}
 
       {/* Sidebar */}
       <aside

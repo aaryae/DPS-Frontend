@@ -14,8 +14,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Input from '@ui/user/atoms/Input'
 
 const PersonalDetailsModel = ({ currentStep, formData, setFormData }: KYCSteps) => {
-
-  
   const handleInputChange = <K extends keyof FormDataType>(field: K, value: FormDataType[K]) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }

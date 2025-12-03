@@ -1,15 +1,9 @@
 import type { KYCSteps } from '@app-types/KYCType'
 import { steps } from '@data/KYCSteps.data'
-import {
-  faCheck,
-  faChevronLeft,
-  faChevronRight
-} from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const NavigationModel = ({ currentStep, setCurrentStep, formData }: KYCSteps) => {
-
-
   const nextStep = () => {
     if (currentStep === 0) {
       if (!formData.fullName || !formData.email || !formData.phone) {

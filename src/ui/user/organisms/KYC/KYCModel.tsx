@@ -55,7 +55,10 @@ const KycModel = ({ onClose }: KYCInterfaceProps) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className='bg-gradient-to-br from-indigo-50 via-white to-purple-50 p-4 md:p-8 modal-container'>
+    <form
+      onSubmit={handleSubmit}
+      className='bg-gradient-to-br from-indigo-50 via-white to-purple-50 p-4 md:p-8 modal-container'
+    >
       <div className='max-w-6xl mx-auto'>
         {/* Header */}
         <HeaderModel />

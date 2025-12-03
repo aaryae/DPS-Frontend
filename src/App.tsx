@@ -12,7 +12,7 @@ function App() {
       element: <Template />,
       children: [
         { index: true, element: <Dashboard /> },
-        {path:'/transfer-money', element:<TransferMoney/>},
+        { path: '/transfer-money', element: <TransferMoney /> },
         { path: '/kyc', element: <KYC /> },
       ],
     },

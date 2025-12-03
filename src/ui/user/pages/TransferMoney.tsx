@@ -32,8 +32,8 @@ const TransferMoney = () => {
             type='number'
             id='Amount'
             placeholder='0.00'
-            value={amount === 0 ? '' : amount} 
-            onChange={(e) => setAmount(Number(e.target.value || 0))} 
+            value={amount === 0 ? '' : amount}
+            onChange={(e) => setAmount(Number(e.target.value || 0))}
             className='outline-none border-0 w-full'
             step='0.01'
             inputMode='decimal'

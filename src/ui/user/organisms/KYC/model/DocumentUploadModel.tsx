@@ -1,17 +1,12 @@
-import type { KYCSteps, UploadedDocsType } from '@app-types/KYCType';
-import { faCamera, faCheckCircle, faCloudUploadAlt, faIdCard, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useRef, useState } from 'react';
+import type { KYCSteps, UploadedDocsType } from '@app-types/KYCType'
+import { faCamera, faCheckCircle, faCloudUploadAlt, faIdCard, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useRef, useState } from 'react'
 
-const DocumentUploadModel = ({currentStep,formData,uploadedDocs,setUploadedDocs}:KYCSteps ) => {
-
-
-
-    const idFrontRef = useRef<HTMLInputElement | null>(null)
-    const idBackRef = useRef<HTMLInputElement | null>(null)
-    const selfieRef = useRef<HTMLInputElement | null>(null)
-
-
+const DocumentUploadModel = ({ currentStep, formData, uploadedDocs, setUploadedDocs }: KYCSteps) => {
+  const idFrontRef = useRef<HTMLInputElement | null>(null)
+  const idBackRef = useRef<HTMLInputElement | null>(null)
+  const selfieRef = useRef<HTMLInputElement | null>(null)
 
   const handleFileChange = (docType: keyof UploadedDocsType, file?: File) => {
     if (!file) return

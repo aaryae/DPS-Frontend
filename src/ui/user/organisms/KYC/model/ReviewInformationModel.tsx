@@ -23,10 +23,10 @@ const ReviewInformationModel = ({currentStep,setCurrentStep,formData}:KYCSteps) 
                         <h3 className='text-2xl font-bold mb-2'>Application Status</h3>
                         <p className='text-white/90'>You're almost there!</p>
                       </div>
-                      <div className='text-right'>
-                        {/* <div className='text-5xl font-bold'>{computePercent()}%</div> */}
+                      {/* <div className='text-right'>
+                        <div className='text-5xl font-bold'>{computePercent()}%</div>
                         <p className='text-white/90 text-sm'>Complete</p>
-                      </div>
+                      </div> */}
                     </div>
       
                     <div className='grid md:grid-cols-3 gap-4'>

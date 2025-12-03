@@ -237,7 +237,7 @@ const PersonalDetailsModel = ({ currentStep, formData, setFormData }: KYCSteps) 
                 </label>
                 <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
                   {[
-                    { value: 'aadhaar', label: 'Aadhaar Card', emoji: '🪪' },
+                    { value: 'citizenship', label: 'citizenship Card', emoji: '🪪' },
                     { value: 'passport', label: 'Passport', emoji: '🛂' },
                     { value: 'driving', label: 'Driving License', emoji: '🚗' },
                     { value: 'voter', label: 'Voter ID', emoji: '🗳️' },

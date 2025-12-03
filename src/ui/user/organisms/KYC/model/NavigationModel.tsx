@@ -1,20 +1,14 @@
 import type { KYCSteps } from '@app-types/KYCType'
+import { steps } from '@data/KYCSteps.data'
 import {
   faCheck,
   faChevronLeft,
-  faChevronRight,
-  faCloudUploadAlt,
-  faShieldAlt,
-  faUser,
+  faChevronRight
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const NavigationModel = ({ currentStep, setCurrentStep, formData }: KYCSteps) => {
-  const steps = [
-    { id: 0, title: 'Personal Details', icon: faUser, desc: 'Basic Information' },
-    { id: 1, title: 'Document Upload', icon: faCloudUploadAlt, desc: 'Identity Verification' },
-    { id: 2, title: 'Final Review', icon: faShieldAlt, desc: 'Confirm & Submit' },
-  ]
+
 
   const nextStep = () => {
     if (currentStep === 0) {

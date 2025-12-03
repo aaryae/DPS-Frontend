@@ -1,7 +1,7 @@
 import { faRightLeft } from '@fortawesome/free-solid-svg-icons/faRightLeft'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
-import KYCInterface from './KYCInterface'
+import KycModel from './KYCModel'
 
 const PersonalDetails = () => {
   const [status, setStatus] = useState<string>('In Process')
@@ -38,7 +38,7 @@ const PersonalDetails = () => {
             </button>
             
             {/* KYC Interface */}
-            <KYCInterface onClose={() => setKYCModel(false)} />
+            <KycModel onClose={() => setKYCModel(false)}/>
           </div>
         </div>
       )}

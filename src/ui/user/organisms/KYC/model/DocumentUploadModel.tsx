@@ -3,16 +3,10 @@ import { faCamera, faCheckCircle, faCloudUploadAlt, faIdCard, faInfoCircle } fro
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRef, useState } from 'react';
 
-const DocumentUploadModel = ({currentStep,formData}:KYCSteps) => {
+const DocumentUploadModel = ({currentStep,formData,uploadedDocs,setUploadedDocs}:KYCSteps ) => {
 
-  const [uploadedDocs, setUploadedDocs] = useState<UploadedDocsType>({
-      idFront: null,
-      idBack: null,
-      selfie: null,
-      addressProof: null,
-    })
 
-    // refs for hidden file inputs
+
     const idFrontRef = useRef<HTMLInputElement | null>(null)
     const idBackRef = useRef<HTMLInputElement | null>(null)
     const selfieRef = useRef<HTMLInputElement | null>(null)

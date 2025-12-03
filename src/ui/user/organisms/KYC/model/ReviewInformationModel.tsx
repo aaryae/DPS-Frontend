@@ -1,8 +1,8 @@
+import type { KYCSteps } from '@app-types/KYCType'
 import { faCheckCircle, faClock, faEye, faMagic, faShieldAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { type SetStateAction } from 'react'
 
-const ReviewInformationModel = ({currentStep,setCurrentStep}:{currentStep:number, setCurrentStep:React.Dispatch<SetStateAction<number>>}) => {
+const ReviewInformationModel = ({currentStep,setCurrentStep,formData}:KYCSteps) => {
     
   return (
     <div>
@@ -64,19 +64,19 @@ const ReviewInformationModel = ({currentStep,setCurrentStep}:{currentStep:number
                     <div className='grid md:grid-cols-2 gap-4'>
                       <div className='p-4 bg-gray-50 rounded-2xl'>
                         <p className='text-gray-600 text-sm mb-1'>Full Name</p>
-                        {/* <p className='font-semibold text-gray-800'>{formData.fullName || 'Not provided'}</p> */}
+                        <p className='font-semibold text-gray-800'>{formData.fullName || 'Not provided'}</p>
                       </div>
                       <div className='p-4 bg-gray-50 rounded-2xl'>
                         <p className='text-gray-600 text-sm mb-1'>Email</p>
-                        {/* <p className='font-semibold text-gray-800'>{formData.email || 'Not provided'}</p> */}
+                        <p className='font-semibold text-gray-800'>{formData.email || 'Not provided'}</p>
                       </div>
                       <div className='p-4 bg-gray-50 rounded-2xl'>
                         <p className='text-gray-600 text-sm mb-1'>Phone</p>
-                        {/* <p className='font-semibold text-gray-800'>{formData.phone || 'Not provided'}</p> */}
+                        <p className='font-semibold text-gray-800'>{formData.phone || 'Not provided'}</p>
                       </div>
                       <div className='p-4 bg-gray-50 rounded-2xl'>
                         <p className='text-gray-600 text-sm mb-1'>ID Number</p>
-                        {/* <p className='font-semibold text-gray-800'>{formData.idNumber || 'Not provided'}</p> */}
+                        <p className='font-semibold text-gray-800'>{formData.idNumber || 'Not provided'}</p>
                       </div>
                     </div>
                   </div>

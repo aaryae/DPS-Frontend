@@ -11,29 +11,11 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-
 import Input from '@ui/user/atoms/Input'
-import { useState } from 'react'
 
-const PersonalDetailsModel = ({currentStep}:KYCSteps) => {
-  // const [currentStep, setCurrentStep] = useState<number>(0)
-  const [formData, setFormData] = useState<FormDataType>({
-    fullName: '',
-    email: '',
-    phone: '',
-    dob: '',
-    address: '',
-    city: '',
-    state: '',
-    pinCode: '',
-    occupation: '',
-    income: '',
-    idType: 'citizenship',
-    idNumber: '',
-    panNumber: '',
-  })
+const PersonalDetailsModel = ({ currentStep, formData, setFormData }: KYCSteps) => {
 
+  
   const handleInputChange = <K extends keyof FormDataType>(field: K, value: FormDataType[K]) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }

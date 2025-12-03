@@ -1,25 +1,10 @@
-import type { FormDataType, KYCSteps, UploadedDocsType } from '@app-types/KYCType';
+import type { KYCSteps, UploadedDocsType } from '@app-types/KYCType';
 import { faCamera, faCheckCircle, faCloudUploadAlt, faIdCard, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRef, useState } from 'react';
 
-const DocumentUploadModel = ({currentStep}:KYCSteps) => {
-  // const [currentStep, setCurrentStep] = useState<number>(0)
-  const [formData, setFormData] = useState<FormDataType>({
-    fullName: '',
-    email: '',
-    phone: '',
-    dob: '',
-    address: '',
-    city: '',
-    state: '',
-    pinCode: '',
-    occupation: '',
-    income: '',
-    idType: 'citizenship',
-    idNumber: '',
-    panNumber: '',
-  })
+const DocumentUploadModel = ({currentStep,formData}:KYCSteps) => {
+
   const [uploadedDocs, setUploadedDocs] = useState<UploadedDocsType>({
       idFront: null,
       idBack: null,
@@ -31,11 +16,8 @@ const DocumentUploadModel = ({currentStep}:KYCSteps) => {
     const idFrontRef = useRef<HTMLInputElement | null>(null)
     const idBackRef = useRef<HTMLInputElement | null>(null)
     const selfieRef = useRef<HTMLInputElement | null>(null)
-    const addressProofRef = useRef<HTMLInputElement | null>(null)
 
-  const handleInputChange = <K extends keyof FormDataType>(field: K, value: FormDataType[K]) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+
 
   const handleFileChange = (docType: keyof UploadedDocsType, file?: File) => {
     if (!file) return

@@ -11,9 +11,9 @@ const PersonalDetails = () => {
     <>
       <div
         onClick={() => setKYCModel(!KYCModel)}
-        className='bg-emerald-100 flex flex-col gap-3 p-7 rounded-3xl border-2 border-emerald-200 w-full cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-[1.02]'
+        className='bg-emerald-100 flex flex-col gap-3 p-7 rounded-3xl border-2 border-[#10b981] w-full cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-[1.02]'
       >
-        <FontAwesomeIcon icon={faRightLeft} className='p-4 rounded-2xl bg-emerald-400' />
+        <FontAwesomeIcon icon={faRightLeft} color='white'  className='p-4 rounded-2xl bg-[#10b981]' />
         <h3 className='font-bold text-md'>Personal Detail</h3>
         <h5 className='text-[#525252] text-sm'>Basic Information Verified</h5>
         <span className='bg-emerald-300 rounded-3xl p-1.5 w-fit text-[#525252] text-sm'>{status}</span>

@@ -4,6 +4,7 @@ import TransferMoney from '@ui/user/pages/TransferMoney'
 import Template from '@ui/user/templates/Template'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
+import MyQr from '@ui/user/pages/MyQr'
 
 function App() {
   const router = createBrowserRouter([
@@ -14,7 +15,9 @@ function App() {
         { index: true, element: <Dashboard /> },
         { path: '/transfer-money', element: <TransferMoney /> },
         { path: '/kyc', element: <KYC /> },
+        {path:'/my-qr', element:<MyQr/>}
       ],
+
     },
   ])
 

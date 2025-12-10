@@ -3,7 +3,7 @@ import QRCode from 'react-qr-code'
 const MyQr = () => {
   return (
     <div>
-      <div style={{ height: 'auto', margin: '0 auto', maxWidth: 300, width: '100%' }}>
+      <div style={{ height: 'auto', margin: '0 auto', maxWidth: 400, width: '100%' }}>
         <QRCode
           size={256}
           style={{ height: 'auto', maxWidth: '100%', width: '100%' }}

@@ -6,7 +6,7 @@ export type InputProps = {
   label: string
   icon?: IconDefinition
   required?: boolean
-  value: string
+  value: string | number
   placeholder?: string
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   type?: React.HTMLInputTypeAttribute

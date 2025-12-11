@@ -1,6 +1,7 @@
 import { faIndianRupee, faMagnifyingGlass, faShieldHeart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
+import Input from '../atoms/Input'
 
 const TransferMoney = () => {
   const [amount, setAmount] = useState<number>(0.0)
@@ -26,19 +27,15 @@ const TransferMoney = () => {
         <label htmlFor='Amount' className='pt-5 pb-2 text-md text-[#202020]'>
           Amount
         </label>
-        <div className='border-2 border-[#dddbdb] flex gap-3 p-3 rounded-2xl'>
-          <FontAwesomeIcon icon={faIndianRupee} className='my-auto' color='#7a7575' />
-          <input
-            type='number'
-            id='Amount'
-            placeholder='0.00'
+       
+          <Input
+            label={'Rupee'}
             value={amount === 0 ? '' : amount}
+            placeholder='0.00'
             onChange={(e) => setAmount(Number(e.target.value || 0))}
-            className='outline-none border-0 w-full'
-            step='0.01'
-            inputMode='decimal'
-          />{' '}
-        </div>
+            type='number'
+            icon={faIndianRupee}
+          />
         <div className='flex gap-2 py-2'>
           <span onClick={() => setAmount(1000)} className='bg-[#ecececee] p-1.5 rounded-lg cursor-pointer'>
             {' '}

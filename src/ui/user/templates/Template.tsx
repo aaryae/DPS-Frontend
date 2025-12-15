@@ -15,6 +15,7 @@ const Template = () => {
         <Header onMenuToggle={() => setSidebarOpen(!sidebarOpen)} />
 
         <main className='flex-1 p-6 mt-14 md:p-8'>
+          <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero ducimus illum, hic laborum exercitationem voluptates corrupti soluta tenetur, voluptas recusandae, assumenda ratione illo!</div>
           <Outlet />
         </main>
       </div>

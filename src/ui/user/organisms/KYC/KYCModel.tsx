@@ -64,14 +64,14 @@ const KycModel = ({ onClose }: KYCInterfaceProps) => {
         <HeaderModel />
 
         {/* Progress Bar */}
-        <ProgressBarModel
+        {/* <ProgressBarModel
           currentStep={currentStep}
           setCurrentStep={setCurrentStep}
           formData={formData}
           setFormData={setFormData}
           uploadedDocs={uploadedDocs}
           setUploadedDocs={setUploadedDocs}
-        />
+        /> */}
         {/* first model */}
         <PersonalDetailsModel
           currentStep={currentStep}
